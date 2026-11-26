@@ -49,12 +49,21 @@ After the freshness check, figure out the situation:
 
 | Situation | What to do |
 |-----------|------------|
+| Adding a new agent or migrating an agent to its own user | Use the `provision-agent` skill in the `my-openclaw-setup` repo instead — it handles the full provisioning flow interactively |
 | Fresh install, haven't configured anything | Walk through [New Setup](#new-setup) |
 | Stuck in the onboarding wizard | See [Onboarding Clarifications](#onboarding-clarifications) |
 | Setting up a specific channel | Read `references/channels.md` |
 | Service not starting or bot not responding | Read `references/troubleshooting.md` |
 | Configuring API keys or models | See [Models & Auth](#models--auth) |
 | General question | Answer directly using your knowledge |
+
+---
+
+## Agent Provisioning
+
+For adding new agents or migrating existing agents to their own OS user, use the **`provision-agent` skill** in the [`my-openclaw-setup`](https://github.com/pollymallen/my-openclaw-setup) repo. It handles the full interactive flow: provisioning decisions (per-agent email, 1Password), OS user creation, config migration, systemd service setup, reboot testing, and cutover.
+
+Clone the repo on the target host and run Claude Code from there — the skill will guide you through everything.
 
 ---
 
